@@ -73,7 +73,7 @@ img {
 }
 
 .illustrationMobile {
-  background-image: url(../faq-accordion-card-main/images/bg-pattern-mobile.svg);
+  background-image: url(/images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -110,7 +110,7 @@ details {
 
 details::after {
   content: "";
-  background-image: url(/faq-accordion-card-main/images/icon-arrow-down.svg);
+  background-image: url(/images/icon-arrow-down.svg);
   background-repeat: no-repeat;
   position: absolute;
   right: 0;
@@ -160,7 +160,7 @@ hr {
     padding: 0;
   }
   .main::before {
-    content: url(../faq-accordion-card-main/images/illustration-box-desktop.svg);
+    content: url(/images/illustration-box-desktop.svg);
     top: 40%;
     left: -11%;
     position: absolute;
@@ -178,7 +178,7 @@ hr {
     overflow: hidden;
     display: grid;
     place-items: center;
-    background-image: url(../faq-accordion-card-main/images/illustration-woman-online-desktop.svg), url(../faq-accordion-card-main/images/bg-pattern-desktop.svg);
+    background-image: url(/images/illustration-woman-online-desktop.svg), url(/images/bg-pattern-desktop.svg);
     background-position-x: -70px, -45em;
     background-position-y: 50%, 50%;
     background-size: 100%, 200%;
