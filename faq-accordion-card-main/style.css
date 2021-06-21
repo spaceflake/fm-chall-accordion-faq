@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  /* font */
+  --ff: 'Kumbh Sans', sans-serif;
+
+  /* gradient */
+  --bgGrad-Soft-violet: hsl(273, 75%, 66%);
+  --bgGrad-Soft-blue: hsl(240, 73%, 65%);
+
+  /* Primary text color*/
+  --ptxt-Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --ptxt-Soft-red: hsl(14, 88%, 65%);
+
+  /* neutral text color */
+  --ntxt-Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --ntxt-Dark-grayish-blue: hsl(240, 6%, 50%);
+
+  /* Dividers */
+  --div-Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--ff);
+  font-size: 12px;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(var(--bgGrad-Soft-violet), var(--bgGrad-Soft-blue));
+  background-repeat: no-repeat;
+  padding: 10em 0;
+}
+
+img {
+  max-height: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(fit-content, 1fr);
+  background: white;
+  border-radius: 1.75rem;
+  padding: 2em;
+  padding-top: 0;
+  box-shadow: 0px 50px 40px -20px rgba(20, 0, 27, 0.4);
+}
+
+.content {
+  /* margin-top: -5em; */
+  min-width: 35ch;
+  max-width: 55ch;
+
+
+}
+
+.content h1 {
+  text-align: center;
+  color: var(--ptxt-Very-dark-desaturated-blue);
+  font-weight: 700;
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+.content details h3 {
+  color: var(--ntxt-Dark-grayish-blue);
+}
+
+.illustrationMobile {
+  background-image: url(../faq-accordion-card-main/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.imgMob {
+  display: block;
+  transform: translate(0%, -55%);
+  margin: auto auto;
+  /* margin-left: 5em; */
+}
+
+.illustrationDesktop {
+  display: none;
+}
+
+
+details > summary {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  margin-right: 4em;
+  color: var(--ntxt-Dark-grayish-blue);
+}
+
+details[open] summary h3 {
+  font-weight: 700;
+  color: var(--ptxt-Very-dark-desaturated-blue);
+}
+
+details {
+  position: relative;
+}
+
+details::after {
+  content: "";
+  background-image: url(/faq-accordion-card-main/images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  margin-right: 1em;
+  transition: transform 250ms ease;
+
+}
+
+details[open]::after {
+  transform: rotate(180deg);
+  transition: transform 250ms ease-out;
+}
+
+
+summary h3:hover {
+  color: var(--ptxt-Soft-red);
+}
+
+details p {
+  color: var(--ntxt-Dark-grayish-blue);
+  margin: 0;
+  margin-bottom: 1.75em;
+  padding-right: 3em;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+hr {
+  border: 1px solid var(--div-Light-grayish-blue);
+}
+
+/* adjustments for desktop */
+
+@media screen and (min-width:800px) {
+  .body {
+    padding: 5em 3em;
+  }
+  .main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    padding: 0;
+  }
+  .main::before {
+    content: url(../faq-accordion-card-main/images/illustration-box-desktop.svg);
+    top: 40%;
+    left: -11%;
+    position: absolute;
+    z-index: 10;
+
+  }
+  .content {
+    margin: 5em 8em 5em 5em;
+    max-width: 45ch;
+  }
+  .illustrationMobile {
+    display: none;
+  }
+  .illustrationDesktop {
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background-image: url(../faq-accordion-card-main/images/illustration-woman-online-desktop.svg), url(../faq-accordion-card-main/images/bg-pattern-desktop.svg);
+    background-position-x: -70px, -45em;
+    background-position-y: 50%, 50%;
+    background-size: 100%, 200%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+
+}
